@@ -1,6 +1,5 @@
 package com.anncode.jetpackcomposecleanarchitecture.presentation.main
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,11 +10,12 @@ import com.anncode.jetpackcomposecleanarchitecture.domain.catfacts.usecases.GetC
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
 /**
  * Created by anahi.salgado on 28/07/2020
  */
-class MainViewModel @ViewModelInject constructor(
+class MainViewModel @Inject constructor(
     private val getCatRandomFact: GetCatRandomFact
 ): ViewModel() {
     private val mutableCatFact = MutableLiveData<CatFactStates>()
